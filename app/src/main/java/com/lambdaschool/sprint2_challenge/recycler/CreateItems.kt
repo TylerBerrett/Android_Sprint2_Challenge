@@ -25,7 +25,9 @@ class CreateItems(val list: ArrayList<GroupItems>) : RecyclerView.Adapter<Create
     override fun onBindViewHolder(holder: ViewHolder, p0: Int) {
         holder.foodImg.setImageResource(list[p0].foodItemImage)
         holder.foodText.text = list[p0].foodItemText
-        holder.card.tag = list[p0].selected
+        holder.foodText.tag = list[p0].selected
+
+
 
         if (list[p0].selected){
             holder.card.setCardBackgroundColor(ContextCompat.getColor(holder.card.context, R.color.colorAccent))
@@ -36,19 +38,16 @@ class CreateItems(val list: ArrayList<GroupItems>) : RecyclerView.Adapter<Create
         }
 
 
-        holder.card.setOnClickListener {
+        holder.toggleButton.setOnClickListener {
 
-            println(it.tag)
+            println(holder.toggleButton.isChecked)
 
-            if (it.tag as Boolean){
-                it.tag = false
+            if (!holder.toggleButton.isChecked){
                 list[p0].selected = false
                 holder.card.setCardBackgroundColor(ContextCompat.getColor(it.context, R.color.colorPrimaryLight))
                 theListOfItems.remove(list[p0].foodItemText)
-
             }
             else {
-                it.tag = true
                 list[p0].selected = true
                 holder.card.setCardBackgroundColor(ContextCompat.getColor(it.context, R.color.colorAccent))
                 theListOfItems.add(list[p0].foodItemText)
@@ -66,7 +65,7 @@ class CreateItems(val list: ArrayList<GroupItems>) : RecyclerView.Adapter<Create
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foodImg = itemView.food_image
         val foodText = itemView.food_name
-        //val toggleButton = itemView.toggle_button
+        val toggleButton = itemView.toggle_button
         val card = itemView.card_view
     }
 
