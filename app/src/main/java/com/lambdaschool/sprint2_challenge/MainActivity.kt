@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
             button_send_list.setOnClickListener{
                 val theListOfItems = adapter.getListItems()
                 createNotification()
@@ -47,12 +45,7 @@ class MainActivity : AppCompatActivity() {
                     putExtra(Intent.EXTRA_TEXT, "This is what I want mom ${theListOfItems.toString().replace("[","").replace("]","")}")
                     type = "text/plain"
                 }
-
-
                 startActivity(sendIntent)
-
-
-
             }
 
 

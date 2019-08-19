@@ -16,19 +16,7 @@
         android:layout_height="wrap_content">
 
 
-        <ToggleButton
-            android:id="@+id/toggle_button"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/colorPrimaryLight"
-            android:textOn=""
-            android:textOff=""
-            android:alpha="0"
-            android:checked="true"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/food_image"/>
+
 
         <ImageView
             android:id="@+id/food_image"

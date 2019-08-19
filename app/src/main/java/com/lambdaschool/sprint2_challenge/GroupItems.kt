@@ -1,3 +1,3 @@
 package com.lambdaschool.sprint2_challenge
 
-class GroupItems (var foodItemImage: Int, var foodItemText: String)
+class GroupItems (var foodItemImage: Int, var foodItemText: String, var selected: Boolean = false)
